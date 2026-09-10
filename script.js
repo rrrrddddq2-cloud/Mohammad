@@ -1,10 +1,8 @@
-// استبدل البريد أدناه بالبريد الجامعي للدكتور.
-const CONTACT_EMAIL = "YOUR_KSU_EMAIL@ksu.edu.sa";
+const CONTACT_EMAIL = "mhatshan@ksu.edu.sa";
 const $ = (id) => document.getElementById(id);
 const toast = $("toast");
 function showToast(message){toast.textContent=message;toast.classList.add("show");window.setTimeout(()=>toast.classList.remove("show"),3200)}
-function ensureEmailConfigured(){if(CONTACT_EMAIL.startsWith("YOUR_")){showToast("يلزم إضافة بريد الدكتور في ملف script.js أولاً.");return false}return true}
-function openMail(subject,body){if(!ensureEmailConfigured())return;window.location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
+function openMail(subject,body){window.location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
 $("questionForm").addEventListener("submit",event=>{event.preventDefault();const name=$("qName").value.trim(),studentId=$("qStudentId").value.trim(),course=$("qCourse").value.trim(),section=$("qSection").value.trim()||"غير مذكور",title=$("qSubject").value.trim(),message=$("qMessage").value.trim();openMail(`[سؤال طالب] ${course} - ${title}`,`السلام عليكم دكتور محمد،\n\nالاسم: ${name}\nالرقم الجامعي: ${studentId}\nالمقرر: ${course}\nالشعبة: ${section}\n\nعنوان السؤال: ${title}\n\nالسؤال:\n${message}\n\nمع الشكر والتقدير.`)});
 $("appointmentForm").addEventListener("submit",event=>{event.preventDefault();const name=$("aName").value.trim(),studentId=$("aStudentId").value.trim(),course=$("aCourse").value.trim(),section=$("aSection").value.trim()||"غير مذكور",date=$("aDate").value,time=$("aTime").value,reason=$("aReason").value.trim();openMail(`[طلب موعد مكتبي] ${course} - ${name}`,`السلام عليكم دكتور محمد،\n\nأرغب في طلب موعد خلال الساعات المكتبية.\n\nالاسم: ${name}\nالرقم الجامعي: ${studentId}\nالمقرر: ${course}\nالشعبة: ${section}\nالتاريخ المقترح: ${date}\nالوقت المقترح: ${time}\n\nسبب المقابلة:\n${reason}\n\nمع الشكر والتقدير.`)});
 const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());$("aDate").min=today.toISOString().split("T")[0];$("year").textContent=new Date().getFullYear();
