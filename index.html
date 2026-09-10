@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b5d4b" />
+  <meta name="description" content="الصفحة الطلابية للدكتور محمد رافع بن هتشان - الأسئلة وطلبات المواعيد المكتبية" />
+  <title>د. محمد رافع بن هتشان | الصفحة الطلابية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">م</span>
+        <span>الصفحة الطلابية</span>
+      </a>
+      <div class="nav-links">
+        <a href="#question">إرسال سؤال</a>
+        <a href="#appointment">طلب موعد</a>
+      </div>
+    </nav>
+
+    <div id="top" class="hero-content container">
+      <div class="profile-mark" aria-hidden="true">د.م</div>
+      <p class="eyebrow">مرحبًا بكم</p>
+      <h1>د. محمد رافع بن هتشان</h1>
+      <p class="subtitle">صفحة مخصصة لتسهيل تواصل الطلاب، استقبال الأسئلة الأكاديمية، وتنظيم طلبات الساعات المكتبية.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#question">أرسل سؤالك</a>
+        <a class="btn btn-secondary" href="#appointment">اطلب موعدًا مكتبيًا</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container intro-grid" aria-label="الخدمات">
+      <article class="info-card">
+        <div class="icon">؟</div>
+        <h2>لديك سؤال؟</h2>
+        <p>أرسل سؤالك مع اسم المقرر ورقم الشعبة، وسيصل بصيغة منظمة تسهّل الرد والمتابعة.</p>
+      </article>
+      <article class="info-card">
+        <div class="icon">⌚</div>
+        <h2>الساعات المكتبية</h2>
+        <p>يمكنك اقتراح اليوم والوقت المناسبين لك مع توضيح سبب المقابلة، ثم انتظار تأكيد الموعد.</p>
+      </article>
+      <article class="info-card">
+        <div class="icon">✓</div>
+        <h2>قبل الإرسال</h2>
+        <p>اكتب بياناتك الجامعية بدقة، واختر عنوانًا واضحًا للسؤال أو سبب المقابلة لتسريع الخدمة.</p>
+      </article>
+    </section>
+
+    <section id="question" class="section section-soft">
+      <div class="container form-layout">
+        <div class="section-copy">
+          <span class="section-tag">الأسئلة الأكاديمية</span>
+          <h2>إرسال سؤال للدكتور</h2>
+          <p>املأ البيانات التالية، وسيتم تجهيز رسالة بريد إلكتروني تحتوي على جميع التفاصيل التي أدخلتها.</p>
+        </div>
+
+        <form class="card form-card" id="questionForm">
+          <div class="form-grid">
+            <label>
+              الاسم الكامل
+              <input type="text" id="qName" required placeholder="مثال: محمد أحمد" />
+            </label>
+            <label>
+              الرقم الجامعي
+              <input type="text" id="qStudentId" required inputmode="numeric" placeholder="الرقم الجامعي" />
+            </label>
+            <label>
+              المقرر
+              <input type="text" id="qCourse" required placeholder="مثال: 101 كيم" />
+            </label>
+            <label>
+              رقم الشعبة
+              <input type="text" id="qSection" placeholder="مثال: 12345" />
+            </label>
+          </div>
+          <label>
+            عنوان السؤال
+            <input type="text" id="qSubject" required placeholder="اكتب عنوانًا مختصرًا" />
+          </label>
+          <label>
+            السؤال
+            <textarea id="qMessage" rows="6" required placeholder="اكتب سؤالك بوضوح هنا..."></textarea>
+          </label>
+          <button class="btn btn-primary btn-full" type="submit">إرسال السؤال</button>
+          <p class="form-note">سيتم فتح تطبيق البريد في جهازك لإتمام الإرسال.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="appointment" class="section">
+      <div class="container form-layout reverse">
+        <div class="section-copy">
+          <span class="section-tag">الساعات المكتبية</span>
+          <h2>طلب مقابلة</h2>
+          <p>اختر وقتًا مقترحًا واشرح موضوع المقابلة. الطلب لا يعني تأكيد الموعد حتى يصلك رد من الدكتور.</p>
+          <div class="notice">
+            <strong>مهم:</strong>
+            <span>يفضل إرسال الطلب قبل الموعد بوقت كافٍ، وكتابة سبب واضح للمقابلة.</span>
+          </div>
+        </div>
+
+        <form class="card form-card" id="appointmentForm">
+          <div class="form-grid">
+            <label>
+              الاسم الكامل
+              <input type="text" id="aName" required placeholder="الاسم الكامل" />
+            </label>
+            <label>
+              الرقم الجامعي
+              <input type="text" id="aStudentId" required inputmode="numeric" placeholder="الرقم الجامعي" />
+            </label>
+            <label>
+              المقرر
+              <input type="text" id="aCourse" required placeholder="اسم أو رمز المقرر" />
+            </label>
+            <label>
+              رقم الشعبة
+              <input type="text" id="aSection" placeholder="رقم الشعبة" />
+            </label>
+            <label>
+              التاريخ المقترح
+              <input type="date" id="aDate" required />
+            </label>
+            <label>
+              الوقت المقترح
+              <input type="time" id="aTime" required />
+            </label>
+          </div>
+          <label>
+            سبب المقابلة
+            <textarea id="aReason" rows="5" required placeholder="اذكر باختصار الموضوع الذي ترغب في مناقشته..."></textarea>
+          </label>
+          <button class="btn btn-primary btn-full" type="submit">إرسال طلب الموعد</button>
+          <p class="form-note">سيتم فتح تطبيق البريد في جهازك لإتمام الإرسال.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <strong>د. محمد رافع بن هتشان</strong>
+        <p>الصفحة الطلابية</p>
+      </div>
+      <p>© <span id="year"></span> جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
